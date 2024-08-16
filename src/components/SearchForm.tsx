@@ -12,7 +12,7 @@ const SearchForm: React.FC<SearchFormProps> = ({ ciudad, handleInputCiudad, hand
       <input
         type="text"
         className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500 text-center md:text-left"
-        placeholder="Ingrese su búsqueda..."
+        placeholder="Ingrese su búsqueda.."
         value={ciudad}
         onChange={handleInputCiudad}
       />
