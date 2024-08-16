@@ -9,22 +9,24 @@ import thunderIcon from '../assets/icons/thunder.svg'
 type IconData = {
   icon: string
   color: string
+  textColor: string
 }
 
 const icons: IconData[] = [
-  { icon: sunnyIcon, color: 'bg-yellow-400' },
-  { icon: cloudyIcon, color: 'bg-gray-500' },
-  { icon: rainyIcon, color: 'bg-blue-600' },
-  { icon: nightIcon, color: 'bg-blue-900' },
-  { icon: snowIcon, color: 'bg-white' },
-  { icon: thunderIcon, color: 'bg-purple-600' },
+  { icon: sunnyIcon, color: 'bg-yellow-400', textColor: 'text-black' },
+  { icon: cloudyIcon, color: 'bg-gray-500', textColor: 'text-white' },
+  { icon: rainyIcon, color: 'bg-blue-600', textColor: 'text-black' },
+  { icon: nightIcon, color: 'bg-blue-900', textColor: 'text-white' },
+  { icon: snowIcon, color: 'bg-white', textColor: 'text-black' },
+  { icon: thunderIcon, color: 'bg-purple-600', textColor: 'text-white' },
 ]
 
 type IconSwitcherProps = {
   setNavbarColor: (color: string) => void
+  setTextColor: (color: string) => void
 }
 
-export const IconSwitcher: React.FC<IconSwitcherProps> = ({ setNavbarColor }) => {
+export const IconSwitcher: React.FC<IconSwitcherProps> = ({ setNavbarColor, setTextColor }) => {
   const [currentIcon, setCurrentIcon] = useState(icons[0])
 
   useEffect(() => {
@@ -34,6 +36,7 @@ export const IconSwitcher: React.FC<IconSwitcherProps> = ({ setNavbarColor }) =>
         const nextIndex = (currentIndex + 1) % icons.length
         const nextIcon = icons[nextIndex]
         setNavbarColor(nextIcon.color)
+        setTextColor(nextIcon.textColor)
         return nextIcon
       })
     }, 3000)

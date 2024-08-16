@@ -31,7 +31,7 @@ export const FavCities = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl font-bold mb-4">Ciudades Favoritas</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center">Ciudades Favoritas</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {weatherData.length > 0 ? (
           weatherData.map((data, index) => (
@@ -49,7 +49,9 @@ export const FavCities = () => {
             />
           ))
         ) : (
-          <p>No hay ciudades favoritas o no se pudieron obtener datos.</p>
+          <div className="flex flex-col">
+            <p className="text-center">No tienes ciudades favoritas.</p>
+          </div>
         )}
       </div>
     </div>
