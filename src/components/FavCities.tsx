@@ -30,7 +30,7 @@ export const FavCities = () => {
   }, [favoriteCities])
 
   return (
-    <div className="container-fav-cities">
+    <div className="container-fav-cities mt-[30px] md:mt-[45px]">
       <h2 className="text-2xl font-bold mb-4 text-center">Ciudades Favoritas</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {weatherData.length > 0 ? (

@@ -45,7 +45,7 @@ export const WheatherApp = () => {
             flagUrl={flagUrl}
           />
         ) : (
-          <p>Ingresa una ciudad para ver el clima</p>
+          <p className="text-center">Ingresa una ciudad para ver el clima</p>
         )}
 
         <FavCities />
