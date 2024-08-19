@@ -43,6 +43,7 @@ export const WheatherApp = () => {
             weatherIcon={data.weather[0].icon}
             weatherDescription={data.weather[0].description}
             flagUrl={flagUrl}
+            wind={data.wind.speed}
           />
         ) : (
           <p className="text-center">Ingresa una ciudad para ver el clima</p>

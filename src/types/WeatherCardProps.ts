@@ -8,5 +8,6 @@ export type WeatherCardProps = {
   weatherIcon: string
   weatherDescription: string
   flagUrl: string | null
+  wind: number
   onFavoriteChange?: () => void
 }

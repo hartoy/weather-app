@@ -13,4 +13,8 @@ export type WeatherData = {
     icon: string
     description: string
   }[]
+  wind: {
+    speed: number
+    deg: number
+  }
 };

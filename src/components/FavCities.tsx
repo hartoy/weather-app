@@ -45,6 +45,7 @@ export const FavCities = () => {
               humidity={data.main.humidity}
               weatherIcon={data.weather[0].icon}
               weatherDescription={data.weather[0].description}
+              wind={data.wind.speed}
               flagUrl={`https://flagcdn.com/w320/${data.sys.country.toLowerCase()}.png`}
             />
           ))

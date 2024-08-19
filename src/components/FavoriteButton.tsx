@@ -7,13 +7,16 @@ type FavoriteButtonProps = {
 
 export const FavoriteButton: React.FC<FavoriteButtonProps> = ({ onClick, isFavorite }) => {
   return (
-    <button
-      onClick={onClick}
-      className={`px-4 py-2 rounded-md focus:outline-none text-white ${
-        isFavorite ? 'bg-red-500 hover:bg-red-600' : 'bg-blue-500 hover:bg-blue-600'
-      }`}
-    >
-      {isFavorite ? 'Quitar de favoritos' : 'Agregar a Favoritos'}
+    <button onClick={onClick} className="transition-transform duration-300 hover:scale-125 ">
+      {isFavorite ? (
+        <span role="img" aria-label="unfilled heart" className="text-xl">
+          💗
+        </span>
+      ) : (
+        <span role="img" aria-label="filled heart" className="text-xl">
+          🤍
+        </span>
+      )}
     </button>
   )
 }
