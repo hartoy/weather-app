@@ -18,6 +18,7 @@ export const WheatherApp = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault()
     if (ciudad.length > 0) fetchWeather(ciudad)
+    setCiudad('')
   }
 
   useEffect(() => {
@@ -31,23 +32,24 @@ export const WheatherApp = () => {
       <Navbar />
       <div className="container mx-auto px-4 py-8">
         <SearchForm ciudad={ciudad} handleInputCiudad={handleInputCiudad} handleSubmit={handleSubmit} />
-
-        {data ? (
-          <WeatherCard
-            country={data.sys.country}
-            city={data.name}
-            temperature={data.main.temp}
-            tempMax={data.main.temp_max}
-            tempMin={data.main.temp_min}
-            humidity={data.main.humidity}
-            weatherIcon={data.weather[0].icon}
-            weatherDescription={data.weather[0].description}
-            flagUrl={flagUrl}
-            wind={data.wind.speed}
-          />
-        ) : (
-          <p className="text-center">Ingresa una ciudad para ver el clima</p>
-        )}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          {data ? (
+            <WeatherCard
+              country={data.sys.country}
+              city={data.name}
+              temperature={data.main.temp}
+              tempMax={data.main.temp_max}
+              tempMin={data.main.temp_min}
+              humidity={data.main.humidity}
+              weatherIcon={data.weather[0].icon}
+              weatherDescription={data.weather[0].description}
+              flagUrl={flagUrl}
+              wind={data.wind.speed}
+            />
+          ) : (
+            <p className="text-center">Ingresa una ciudad para ver el clima</p>
+          )}
+        </div>
 
         <FavCities />
       </div>

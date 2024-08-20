@@ -16,7 +16,7 @@ export const useFlag = () => {
       if (!countryResponse.ok) throw new Error('Error en la API de banderas')
 
       const countryInfo = await countryResponse.json()
-      setFlagUrl(countryInfo[0].flags.svg)
+      setFlagUrl(countryInfo[0].flags.png)
 
       
     } catch (err) {

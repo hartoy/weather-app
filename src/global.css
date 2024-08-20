@@ -9,8 +9,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
-  color:white;
+  background-color: #e5e5e5;
 }
 
 code {
@@ -41,3 +40,4 @@ span{
   font-family: "Kanit", sans-serif;
     font-weight: 300;
 }
+

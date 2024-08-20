@@ -1,4 +1,6 @@
 import React from 'react'
+import inFav from '../assets/images/infav.webp'
+import outFav from '../assets/images/outfav.webp'
 
 type FavoriteButtonProps = {
   onClick: () => void
@@ -8,15 +10,7 @@ type FavoriteButtonProps = {
 export const FavoriteButton: React.FC<FavoriteButtonProps> = ({ onClick, isFavorite }) => {
   return (
     <button onClick={onClick} className="transition-transform duration-300 hover:scale-125 ">
-      {isFavorite ? (
-        <span role="img" aria-label="unfilled heart" className="text-xl">
-          💗
-        </span>
-      ) : (
-        <span role="img" aria-label="filled heart" className="text-xl">
-          🤍
-        </span>
-      )}
+      {isFavorite ? <img src={inFav} alt="" className="h-7 w-7" /> : <img src={outFav} alt="" className="h-7 w-7" />}
     </button>
   )
 }

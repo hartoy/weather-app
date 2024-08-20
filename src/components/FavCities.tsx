@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useFavorites } from '../context/FavoritesContext'
 import { useWeather } from '../hooks/useWeather'
 import { WeatherCard } from './WeatherCard'
+import noWolrdImg from '../assets/images/icon-no-world.webp'
 
 export const FavCities = () => {
   const { favoriteCities } = useFavorites()
@@ -30,7 +31,7 @@ export const FavCities = () => {
   }, [favoriteCities])
 
   return (
-    <div className="container-fav-cities mt-[30px] md:mt-[45px]">
+    <div className="container-fav-cities mt-[65px] md:mt-[45px]">
       <h2 className="text-2xl font-bold mb-4 text-center">Ciudades Favoritas</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {weatherData.length > 0 ? (
@@ -50,8 +51,9 @@ export const FavCities = () => {
             />
           ))
         ) : (
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center">
             <p className="text-center">No tienes ciudades favoritas.</p>
+            <img src={noWolrdImg} alt="No favorite cities" className="w-52 h-48 mt-3 ml-8" />
           </div>
         )}
       </div>

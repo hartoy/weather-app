@@ -6,7 +6,7 @@ export const Navbar = () => {
   const [textColor, setTextColor] = useState('')
 
   return (
-    <nav className={`${navbarColor} shadow-xl transition-colors duration-500`}>
+    <nav className={`${navbarColor} shadow-xl transition-colors duration-500 `}>
       <div className="container mx-auto px-2 py-2 flex items-center justify-between">
         <div className="flex items-center w-full md:w-auto">
           <IconSwitcher setNavbarColor={setNavbarColor} setTextColor={setTextColor} />

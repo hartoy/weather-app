@@ -8,17 +8,17 @@ interface SearchFormProps {
 
 const SearchForm: React.FC<SearchFormProps> = ({ ciudad, handleInputCiudad, handleSubmit }) => {
   return (
-    <form className="max-w-sm mx-auto mt-4 mb-4" onSubmit={handleSubmit}>
+    <form className="mt-4 mb-4 flex max-w-[800px] mx-auto" onSubmit={handleSubmit}>
       <input
         type="text"
-        className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-blue-500 text-center md:text-left"
+        className="w-full  border-2 border-black  rounded-tl-md rounded-bl-md shadow-sm focus:outline-none focus:border-blue-500 text-center md:text-left text-black pl-2"
         placeholder="Ingrese su búsqueda.."
         value={ciudad}
         onChange={handleInputCiudad}
       />
       <button
         type="submit"
-        className="mt-2 w-full px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
+        className=" px-4 py-2 bg-black border-black text-white  hover:bg-blue-600 focus:outline-none focus:bg-blue-600 w-1/4 h-full rounded-tr-md rounded-br-md"
       >
         Buscar
       </button>
