@@ -53,10 +53,10 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({
 
   if (temperatureInCelsius >= 27) {
     temperatureClass = 'text-red-500 pulse'
-    bgHot = 'bg-red-300'
+    bgHot = 'bg-red-200'
   } else if (temperatureInCelsius < 10) {
     temperatureClass = 'text-blue-500 pulse'
-    bgHot = 'bg-blue-300'
+    bgHot = 'bg-blue-200'
   }
 
   useEffect(() => {
