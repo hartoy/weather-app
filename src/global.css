@@ -41,3 +41,18 @@ span{
     font-weight: 300;
 }
 
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.pulse {
+  animation: pulse 1s ease-in-out infinite;
+}

@@ -21,6 +21,7 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({
   const { favoriteCities, addFavorite, removeFavorite } = useFavorites()
 
   const difKelvin = 273.15
+  const windInKmH = wind * 3.6
 
   // Actualiza el mapeo para usar estos valores
   const iconMap: Record<string, WeatherStates> = {
@@ -46,6 +47,18 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({
 
   const mappedIcon: WeatherStates = iconMap[weatherIcon as keyof typeof iconMap] || 'sunny'
 
+  const temperatureInCelsius = Math.round(temperature - difKelvin)
+  let temperatureClass = ''
+  let bgHot = 'bg-white'
+
+  if (temperatureInCelsius >= 27) {
+    temperatureClass = 'text-red-500 pulse'
+    bgHot = 'bg-red-300'
+  } else if (temperatureInCelsius < 10) {
+    temperatureClass = 'text-blue-500 pulse'
+    bgHot = 'bg-blue-300'
+  }
+
   useEffect(() => {
     setIsFavorite(favoriteCities.includes(city))
   }, [favoriteCities, city])
@@ -59,7 +72,7 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({
   }
 
   return (
-    <div className="flex flex-col border-2 border-black rounded p-3 bg-white">
+    <div className={`flex flex-col border-2 border-black rounded p-3 ${bgHot}`}>
       <div className="flex items-center justify-between mb-2">
         {flagUrl && (
           <img src={flagUrl} alt="Bandera del país" className="w-7 h-7 rounded-full border-2 border-black " />
@@ -69,7 +82,7 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({
       </div>
       <div className="flex flex-col items-center justify-center">
         <WeatherSvg state={mappedIcon} width={100} height={100} />
-        <span className="text-5xl">{Math.round(temperature - difKelvin)}°C</span>
+        <span className={`text-5xl ${temperatureClass}`}>{temperatureInCelsius}°C</span>
       </div>
 
       <div className="flex items-center justify-between w-1/2 md:w-1/3  m-auto mt-3">
@@ -86,7 +99,7 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({
         </span>
         <span className="flex items-center">
           <img className="w-5 h-5 mr-2" src={windIcon} alt="" />
-          {Math.round(wind)} m/s
+          {Math.round(windInKmH)} k/h
         </span>
       </div>
     </div>
