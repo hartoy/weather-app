@@ -32,7 +32,7 @@ export const FavCities = () => {
 
   return (
     <div className="container-fav-cities mt-[65px] md:mt-[45px]">
-      <h2 className="text-2xl font-bold mb-4 text-center">Ciudades Favoritas</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center text-black lg:text-white md:text-3xl">Ciudades Favoritas</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {weatherData.length > 0 ? (
           weatherData.map((data, index) => (
@@ -52,8 +52,12 @@ export const FavCities = () => {
           ))
         ) : (
           <div className="flex flex-col items-center">
-            <p className="text-center">No tienes ciudades favoritas.</p>
-            <img src={noWolrdImg} alt="No favorite cities" className="w-52 h-48 mt-3 ml-8" />
+            <p className="text-center text-black lg:text-white md:text-2xl">No tienes ciudades favoritas.</p>
+            <img
+              src={noWolrdImg}
+              alt="No favorite cities"
+              className="w-52 h-48 md:w-64 md:h-56 lg:w-80 lg:h-72 mt-3 ml-8"
+            />
           </div>
         )}
       </div>

@@ -47,7 +47,9 @@ export const WheatherApp = () => {
               wind={data.wind.speed}
             />
           ) : (
-            <p className="text-center">Ingresa una ciudad para ver el clima</p>
+            <p className="text-center text-black lg:text-white font-bold md:text-2xl">
+              Ingresa una ciudad para ver el clima
+            </p>
           )}
         </div>
 
