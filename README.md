@@ -48,7 +48,7 @@ cd weather-app
 npm install
 ```
 
-4- Obtain an API key from OpenWeatherMap:
+4- Obtain an API key from [OpenWeatherMap](https://openweathermap.org/api):
 
 Sign up for a free account.
 Go to the API keys section in your account dashboard.
@@ -90,3 +90,4 @@ For any questions or inquiries, please contact:
 - Name: Ignacio
 - Email: hartoyy@hotmail.com
 - [Portfolio](https://nachohardoy-web.vercel.app/).
+  https://openweathermap.org/api
