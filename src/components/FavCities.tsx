@@ -7,10 +7,12 @@ import noWolrdImg from '../assets/images/icon-no-world.webp'
 export const FavCities = () => {
   const { favoriteCities } = useFavorites()
   const [weatherData, setWeatherData] = useState<any[]>([])
+  const [loading, setLoading] = useState<boolean>(false)
   const { fetchWeather } = useWeather()
 
   useEffect(() => {
     const fetchFavoriteCitiesWeather = async () => {
+      setLoading(true)
       if (favoriteCities.length > 0) {
         try {
           const weatherPromises = favoriteCities.map(async (city) => {
@@ -18,12 +20,15 @@ export const FavCities = () => {
             return data
           })
           const results = await Promise.all(weatherPromises)
-          setWeatherData(results.filter((result) => result !== null)) // Filtrar resultados válidos
+          setWeatherData(results.filter((result) => result !== null))
         } catch (error) {
           console.error('Error fetching favorite cities weather:', error)
+        } finally {
+          setLoading(false)
         }
       } else {
         setWeatherData([])
+        setLoading(false)
       }
     }
 
@@ -36,7 +41,11 @@ export const FavCities = () => {
         Ciudades Favoritas
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-2">
-        {weatherData.length > 0 ? (
+        {loading ? (
+          <div className="flex justify-center items-center col-span-1 sm:col-span-2 md:col-span-3 mt-3 md:mt-18">
+            <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-red-800"></div>
+          </div>
+        ) : weatherData.length > 0 ? (
           weatherData.map((data, index) => (
             <WeatherCard
               key={index}
