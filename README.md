@@ -30,31 +30,36 @@ This is a Weather App built with React and TypeScript that provides weather fore
 
 ## Installation
 
-Clone the repository:
+1- Clone the repository:
 
 ```sh
 git clone https://github.com/your-username/weather-app.git
 ```
 
-Navigate to the project directory:
+2- Navigate to the project directory:
 
 ```sh
 cd weather-app
 ```
 
-Install dependencies:
+3- Install dependencies:
 
 ```sh
 npm install
 ```
 
+4- Obtain an API key from OpenWeatherMap:
+
+Sign up for a free account.
+Go to the API keys section in your account dashboard.
+Generate a new API key.
 Create a .env file in the root directory and add your OpenWeatherMap API key:
 
 ```sh
 REACT_APP_WEATHER_API_KEY=your_api_key_here
 ```
 
-Start the development server:
+5- Start the development server:
 
 ```sh
 npm start
@@ -82,6 +87,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 For any questions or inquiries, please contact:
 
-Name: Ignacio
-Email: hartoyy@hotmail.com
-[Portfolio](https://nachohardoy-web.vercel.app/).
+- Name: Ignacio
+- Email: hartoyy@hotmail.com
+- [Portfolio](https://nachohardoy-web.vercel.app/).
