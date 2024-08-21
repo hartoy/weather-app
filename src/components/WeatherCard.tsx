@@ -23,7 +23,6 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({
   const difKelvin = 273.15
   const windInKmH = wind * 3.6
 
-  // Actualiza el mapeo para usar estos valores
   const iconMap: Record<string, WeatherStates> = {
     '01d': 'sunny',
     '01n': 'clear-night',
