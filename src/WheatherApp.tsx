@@ -8,7 +8,7 @@ import SearchForm from './components/SearchForm'
 
 export const WheatherApp = () => {
   const [ciudad, setCiudad] = useState<string>('')
-  const { data, countryCode, fetchWeather } = useWeather()
+  const { data, countryCode, fetchWeather, error } = useWeather()
   const { fetchFlag, flagUrl } = useFlag()
 
   const handleInputCiudad = (e: any) => {
@@ -52,7 +52,7 @@ export const WheatherApp = () => {
           ) : (
             <div className="flex justify-center items-center col-span-1 sm:col-span-2 md:col-span-3 mt-3 md:mt-7">
               <p className="text-center text-black lg:text-white font-bold md:text-2xl">
-                Ingresa una ciudad para ver el clima
+                {error ? 'Esa ciudad no existe' : 'Ingresa una ciudad para ver el clima'}
               </p>
             </div>
           )}

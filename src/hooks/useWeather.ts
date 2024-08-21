@@ -12,14 +12,21 @@ export const useWeather = () => {
   const fetchWeather = async (ciudad: string) => {
     setLoading(true)
     setError(null)
+    setData(null)
 
     try {
       const response = await fetch(`${urlWeatherBase}?q=${ciudad}&appid=${apiKey}`)
       
-      if (!response.ok) throw new Error('Error en la API del clima')
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error('Esa ciudad no existe')
+        } else {
+          throw new Error('Error en la API del clima')
+        }
+      }
+      
       const info: WeatherData = await response.json()
       setData(info)
-    
       return info
       
     } catch (err) {
