@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { IconSwitcher } from './IconSwitcher'
 
 export const Navbar = () => {
-  const [navbarColor, setNavbarColor] = useState('')
+  const [navbarColor, setNavbarColor] = useState('bg-yellow-400 ')
   const [textColor, setTextColor] = useState('')
 
   return (

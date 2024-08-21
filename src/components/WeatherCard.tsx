@@ -41,8 +41,8 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({
     '11n': 'lightning',
     '13d': 'snowy',
     '13n': 'snowy',
-    '50d': 'fog',
-    '50n': 'fog',
+    '50d': 'cloudy',
+    '50n': 'cloudy',
   }
 
   const mappedIcon: WeatherStates = iconMap[weatherIcon as keyof typeof iconMap] || 'sunny'
@@ -72,7 +72,7 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({
   }
 
   return (
-    <div className={`flex flex-col border-2 border-black rounded p-3 ${bgHot}`}>
+    <div className={`flex flex-col border-2 border-black rounded p-3 ${bgHot} md:w-[350px] lg:w-[400px]`}>
       <div className="flex items-center justify-between mb-2">
         {flagUrl && (
           <img src={flagUrl} alt="Bandera del país" className="w-7 h-7 rounded-full border-2 border-black " />
@@ -85,7 +85,7 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({
         <span className={`text-5xl ${temperatureClass}`}>{temperatureInCelsius}°C</span>
       </div>
 
-      <div className="flex items-center justify-between w-1/2 md:w-1/3  m-auto mt-3">
+      <div className="flex items-center justify-between w-1/2 md:w-1/2  m-auto mt-3">
         <span>
           Min <span className=" text-blue-500 ml-2">{Math.round(tempMin - difKelvin)}°C</span>
         </span>
@@ -93,11 +93,11 @@ export const WeatherCard: React.FC<WeatherCardProps> = ({
           Max <span className=" text-red-500 ml-2">{Math.round(tempMax - difKelvin)}°C</span>
         </span>
       </div>
-      <div className="flex items-center justify-between w-1/2 md:w-1/3  m-auto mt-2">
+      <div className="flex items-center justify-between w-1/2 md:w-1/2  m-auto mt-2">
         <span className="flex items-center ">
           <img className="w-6 h-6 mr-2" src={HumidiyIcon} alt="" /> {humidity} %
         </span>
-        <span className="flex items-center">
+        <span className="flex items-center ">
           <img className="w-5 h-5 mr-2" src={windIcon} alt="" />
           {Math.round(windInKmH)} k/h
         </span>
